@@ -1,0 +1,12 @@
+---
+ssmRoleName: "mySSMRoleName"
+nestedVirt: true
+ec2_instance:
+  instanceType: "m5.metal" # If nestedVirt, bare metal must be chosen.
+images:
+  - "frrouting/frr:v7.5.1"
+  - "ghcr.io/nokia/srlinux:latest"
+repository:
+  url: "https://github.com/h4ndzdatm0ld/containerlabs.git"
+  dir: "containerlabs"
+allowInboundSSH: false
