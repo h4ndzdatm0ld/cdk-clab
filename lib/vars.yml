@@ -1,12 +1,16 @@
 ---
 ssmRoleName: "mySSMRoleName"
-nestedVirt: true
-ec2_instance:
-  instanceType: "m5.metal" # If nestedVirt, bare metal must be chosen.
+nestedVirt: false
+ec2Instance:
+  instanceType: "t3.2xlarge" # If nestedVirt, bare metal must be chosen.
 images:
   - "frrouting/frr:v7.5.1"
   - "ghcr.io/nokia/srlinux:latest"
 repository:
   url: "https://github.com/h4ndzdatm0ld/containerlabs.git"
   dir: "containerlabs"
-allowInboundSSH: false
+ssh:
+  allowInboundSSH: false
+  allowInboundSSHFrom: []
+dockerComposeVersion: "1.29.2"
+containerlabVersion: "latest"
