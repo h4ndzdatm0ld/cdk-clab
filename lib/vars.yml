@@ -10,7 +10,15 @@ repository:
   url: "https://github.com/h4ndzdatm0ld/containerlabs.git"
   dir: "containerlabs"
 ssh:
-  allowInboundSSH: false
-  allowInboundSSHFrom: []
+  allowInboundSSH: true
+  privateKeyPath: "~/.ssh/id_rsa"
+  allowInboundSSHFrom:
+    - "72.217.82.0/24"
 dockerComposeVersion: "1.29.2"
-containerlabVersion: "latest"
+containerLabVersion: "latest"
+# lambda:
+#   instanceTimezone: "America/New_York"
+#   instanceShutOff: true
+#   instanceShutOffSchedule: "cron(0 0 ? * SUN *)"
+#   instanceTurnOn: true
+#   instanceTurnOnSchedule: "cron(0 0 ? * MON *)"

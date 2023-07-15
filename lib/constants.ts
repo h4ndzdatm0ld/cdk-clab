@@ -13,3 +13,23 @@ export const BARE_METAL_INSTANCE_TYPES = [
   'm6in.metal',
   'm7g.metal',
 ];
+
+export interface Vars {
+  ssmRoleName: string;
+  nestedVirt: boolean;
+  ec2Instance: {
+    instanceType: string;
+  };
+  images: string[];
+  repository: {
+    url: string;
+    dir: string;
+  };
+  dockerComposeVersion: string;
+  containerLabVersion: string;
+  ssh: {
+    allowInboundSSH: string
+    allowInboundSSHFrom: string[];
+    privateKeyPath: string;
+  }
+}
